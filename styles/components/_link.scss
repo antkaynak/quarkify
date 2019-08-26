@@ -1,0 +1,13 @@
+@import "button";
+
+.q-anchor {
+  @extend .q-button;
+  display: inline-grid;
+  align-items: center;
+
+  &.q-anchor-disabled {
+    pointer-events: none;
+  }
+}
+
+

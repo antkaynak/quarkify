@@ -1,0 +1,30 @@
+@mixin popup-animation($duration: 150ms) {
+  .q-zoomIn {
+
+    &.q-popup-enter {
+      .q-popup-main {
+        transform: scale(0);
+      }
+    }
+
+    &.q-popup-enter-active {
+      .q-popup-main {
+        transform: scale(1);
+        transition: transform $duration;
+      }
+    }
+
+    &.q-popup-exit {
+      .q-popup-main {
+        transform: scale(1);
+        transition: transform $duration;
+      }
+    }
+
+    &.q-popup-exit-active {
+      .q-popup-main {
+        transform: scale(0);
+      }
+    }
+  }
+}

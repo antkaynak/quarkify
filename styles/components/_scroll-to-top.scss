@@ -1,0 +1,24 @@
+@import "../mixins/flex";
+
+.q-scroll-to-top {
+  @include flex-center;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  background: rgba(49, 49, 49, 0.7);
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+
+  &.hide {
+    display: none;
+  }
+
+  .q-icon {
+    vertical-align: bottom;
+    font-size: 22px;
+    width: 26px;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../_variables";
+
+.q-box {
+  background-color: $white-two;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius;
+  padding: $space-medium;
+  position: relative;
+
+  &.q-spaced {
+    margin: $box-margin;
+  }
+
+  &.q-fitted {
+    padding: 0;
+  }
+
+  &.q-left-aligned {
+    text-align: left;
+  }
+
+  &.q-right-aligned {
+    text-align: right;
+  }
+
+  &.q-center-aligned {
+    text-align: center;
+  }
+
+  &.q-justify-aligned {
+    text-align: justify;
+  }
+}
+
+.q-box-group{
+  border: 1px solid $border-gray;
+
+  .q-box{
+    border:0;
+    border-radius: 0;
+  }
+
+  .q-box:not(:last-child){
+    border-bottom: 1px solid $border-gray;
+
+  }
+}

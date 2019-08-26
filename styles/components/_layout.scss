@@ -1,0 +1,18 @@
+@import '../_globals';
+
+.q-layout {
+  background-color: $white;
+  height: 100%;
+  display: block;
+  padding: $space-medium;
+  margin: 0;
+  border: 0;
+  font-family: $font-family;
+  outline: none;
+  user-select: none;
+
+  &.q-fitted {
+    padding: 0;
+  }
+}
+

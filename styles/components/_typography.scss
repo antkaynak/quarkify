@@ -1,0 +1,67 @@
+@import '../_globals';
+@import '../_colors';
+@import "../mixins/text-truncate";
+
+.q-typography {
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+
+  &.bold {
+    font-weight: $bold;
+  }
+
+  &.ellipsis {
+    @include text-truncate;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.q-h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &.q-h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &.q-h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &.q-paragraph {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &.q-smallParagraph {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &.q-body {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &.q-block{
+    display: block;
+  }
+
+  &.q-inline{
+    display: inline;
+  }
+
+
+  @each $color, $value in $colors {
+    &.#{$color} {
+      color: $value;
+    }
+  }
+}

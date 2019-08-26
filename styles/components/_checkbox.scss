@@ -1,0 +1,82 @@
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+
+.q-checkbox-wrapper {
+  user-select: none;
+  font-family: icomoon !important;
+
+  .q-input[type=checkbox] + .q-label {
+    display: inline-flex;
+    align-items: center;
+    margin: $checkbox-margin;
+    cursor: pointer;
+    padding: $checkbox-padding;
+  }
+
+  .q-input[type=checkbox] {
+    display: none;
+  }
+
+  .q-input[type=checkbox] + .q-label:before {
+    font-family: icomoon !important;
+    content: "\e933";
+    border: $checkbox-border-width solid $checkbox-border-passive;
+    border-radius: $border-radius;
+    display: inline-block;
+    color: transparent;
+    line-height: 1rem;
+    transition: .2s;
+    margin-right: 5px;
+  }
+
+  .q-input[type=checkbox]:checked + .q-label {
+    font-weight: $bold;
+  }
+
+  .q-input[type=checkbox] + .q-label:active:before {
+    transform: scale(0);
+  }
+
+  .q-input[type=checkbox]:checked + .q-label:before {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white-two;
+  }
+
+  .q-input[type=checkbox]:disabled + .q-label {
+    color: $light-gray;
+  }
+
+  .q-input[type=checkbox]:checked:disabled + .q-label {
+    color: $light-gray;
+  }
+
+  .q-input[type=checkbox]:disabled + .q-label:before {
+    transform: scale(1);
+    border-color: $light-gray;
+  }
+
+  .q-input[type=checkbox]:checked:disabled + .q-label:before {
+    transform: scale(1);
+    background-color: $light-gray;
+    border-color: $light-gray;
+  }
+
+  &.q-error {
+    .q-input[type=checkbox] + .q-label:before {
+      border-color: $red;
+    }
+
+    .q-input[type=checkbox]:checked + .q-label:before {
+      background-color: $white-two;
+      border-color: $red;
+      color: $red;
+    }
+
+    .q-input[type=checkbox] + .q-label {
+      color: $red;
+    }
+  }
+
+}

@@ -1,0 +1,98 @@
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+
+.q-select-wrapper {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  height: $select-height;
+  width: fit-content;
+  text-align: center;
+  align-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: $border-radius;
+  background-color: $white-two;
+  border: 1px solid $border-gray-two;
+  color: $dark-gray;
+
+  &.q-fluid {
+    @include fluid;
+  }
+
+  &.q-disabled {
+    opacity: 0.5;
+    user-select: none;
+    -moz-user-select: none;
+
+    select {
+      pointer-events: none;
+    }
+  }
+
+  &.q-error {
+    animation-name: select-error;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+
+    &.q-select-wrapper {
+      border-color: $red;
+    }
+  }
+
+  @keyframes select-error {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  &:not(.q-disabled) {
+    .q-select-group:active {
+      border: 1px solid $light-gray;
+    }
+  }
+
+  .select-left-padding {
+    padding-left: 20px;
+  }
+
+  .select-right-padding {
+    padding-right: 20px;
+  }
+
+  .q-select-icon {
+    font-size: $font-size-small-paragraph;
+    pointer-events: none;
+    position: absolute;
+  }
+  .q-select-icon-left {
+    @extend .q-select-icon;
+    left: 5px;
+  }
+  .q-select-icon-right {
+    @extend .q-select-icon;
+    right: 5px;
+  }
+}
+
+.q-select {
+  width: 100%;
+  color: currentColor;
+  padding: $select-padding;
+  font-size: $font-size-paragraph;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  line-height: $select-line-height;
+  background: 0;
+  &:focus {
+    outline: none !important;
+  }
+}

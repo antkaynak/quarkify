@@ -1,0 +1,85 @@
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+
+.q-button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+  padding-left: $space-small;
+  padding-right: $space-small;
+  font-weight: $regular;
+  height: $button-height;
+  font-family: $font-family;
+  font-size: $button-font-size;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  border-radius: $border-radius;
+
+  &.q-primary {
+    @include primary;
+  }
+
+  &.q-secondary {
+    @include secondary;
+  }
+
+  &.q-gray {
+    @include gray;
+  }
+
+  &.q-disabled {
+    @include disabled;
+  }
+
+  &.q-fluid {
+    @include fluid;
+  }
+
+  &.q-round {
+    border-radius: $button-round;
+  }
+
+  &.q-circular {
+    border-radius: 50%;
+    width: $button-circular;
+    height: $button-circular;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  //Icon
+  .q-icon {
+    padding-left: 0;
+    padding-right: $space-small;
+  }
+
+  .q-icon:only-child {
+    padding-right: 0;
+  }
+
+  //Loader
+  &.loading {
+    .q-loader {
+      background-color: transparent;
+    }
+
+    //Hide button contents
+    .q-loader + span {
+      opacity: 0;
+    }
+  }
+
+}
+
